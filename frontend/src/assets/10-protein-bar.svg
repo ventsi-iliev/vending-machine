@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="protein bar">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M22 118 h196 v124 h-196 z" fill="#2F7A46"/>
+  <path d="M22 118 l-12 -14 v152 l12 -14 z" fill="#E8E4D8"/>
+  <path d="M218 118 l12 -14 v152 l-12 -14 z" fill="#E8E4D8"/>
+  <rect x="22" y="162" width="196" height="38" fill="#E8E4D8"/>
+  <path d="M40 128 v104" stroke="#FFFFFF" stroke-width="9" opacity="0.22" fill="none"/>
+  <text x="120" y="190" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="1.6" opacity="1">PROTEIN</text>
+  <text x="120" y="212" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.2" opacity="0.85">PEANUT 20 G</text>
+
+</g>
+</svg>

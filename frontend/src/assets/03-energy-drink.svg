@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="energy drink">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M74 80 v210 a46.0 16 0 0 0 92 0 v-210 z" fill="#1B1A22"/>
+  <ellipse cx="120" cy="80" rx="46.0" ry="15" fill="#9C9AA6"/>
+  <ellipse cx="120" cy="80" rx="32.0" ry="9" fill="#1B1A22" opacity="0.5"/>
+  <rect x="74" y="142" width="92" height="86" fill="#7DDA3C"/>
+  <path d="M85 94 v180" stroke="#FFFFFF" stroke-width="8" opacity="0.26" fill="none"/>
+  <text x="120" y="194" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1.6" opacity="1">SURGE</text>
+  <text x="120" y="216" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.2" opacity="0.85">ENERGY</text>
+  <text x="120" y="296" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2" opacity="0.8">330 ml</text>
+
+</g>
+</svg>

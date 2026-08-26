@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="coffee cup">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M74 108 h92 l-14 190 a14 14 0 0 1 -14 13 h-36 a14 14 0 0 1 -14 -13 z" fill="#EDE9DE"/>
+  <rect x="66" y="84" width="108" height="26" rx="9" fill="#7A3B1E"/>
+  <rect x="100" y="52" width="40" height="32" rx="8" fill="#7A3B1E"/>
+  <path d="M79 170 h82 l-6 76 h-70 z" fill="#7A3B1E"/>
+  <path d="M92 124 v176" stroke="#FFFFFF" stroke-width="7" opacity="0.28" fill="none"/>
+  <text x="120" y="208" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.6" opacity="1">COFFEE</text>
+  <text x="120" y="230" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.2" opacity="0.85">LATTE</text>
+
+</g>
+</svg>

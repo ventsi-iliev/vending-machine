@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="mixed nuts">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M46 90 h148 v168 q0 30 -30 30 h-88 q-30 0 -30 -30 z" fill="#8C4A2F"/>
+  <rect x="46" y="66" width="148" height="26" rx="6" fill="#E8C24B"/>
+  <circle cx="120" cy="176" r="50" fill="#E8C24B"/>
+  <path d="M64 106 v146" stroke="#FFFFFF" stroke-width="9" opacity="0.2" fill="none"/>
+  <text x="120" y="172" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="1.6" opacity="1">NUTS</text>
+  <text x="120" y="194" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.2" opacity="0.85">ROASTED MIX</text>
+
+</g>
+</svg>

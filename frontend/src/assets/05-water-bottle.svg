@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="water bottle">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <rect x="102" y="34" width="36" height="26" rx="5" fill="#1E6FA8"/>
+  <path d="M106 60 h28 l8 26 q10 12 10 30 v168 a16 16 0 0 1 -16 16 h-52 a16 16 0 0 1 -16 -16 v-168 q0 -18 10 -30 z" fill="#8FD3E8" fill-opacity="0.5"/>
+  <rect x="78" y="150" width="84" height="92" fill="#1E6FA8"/>
+  <path d="M92 134 v148" stroke="#FFFFFF" stroke-width="8" opacity="0.3" fill="none"/>
+  <text x="120" y="190" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="1.6" opacity="1">STILL</text>
+  <text x="120" y="212" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="7" font-weight="600" letter-spacing="2.2" opacity="0.85">MINERAL WATER</text>
+  <text x="120" y="232" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2" opacity="0.8">500 ml</text>
+
+</g>
+</svg>

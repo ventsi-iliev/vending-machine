@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="potato chips">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M12 74 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 l6 -7 l6 7 v212 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 l-6 7 l-6 -7 z" fill="#1E5AA8"/>
+  <path d="M14 98 h212" stroke="#1B1A22" stroke-width="2" opacity="0.3" fill="none"/>
+  <path d="M14 266 h212" stroke="#1B1A22" stroke-width="2" opacity="0.3" fill="none"/>
+  <ellipse cx="120" cy="182" rx="78" ry="48" fill="#F2C230"/>
+  <path d="M30 110 v144" stroke="#FFFFFF" stroke-width="10" opacity="0.2" fill="none"/>
+  <text x="120" y="178" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="1.6" opacity="1">CHIPS</text>
+  <text x="120" y="200" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.2" opacity="0.85">SEA SALT</text>
+
+</g>
+</svg>

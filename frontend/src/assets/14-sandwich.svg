@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="sandwich">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M30 268 l90 -184 l90 184 z" fill="#DCD8CC"/>
+  <path d="M76 268 l44 -90 l44 90 z" fill="#C25A3C"/>
+  <text x="120" y="234" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="1.6" opacity="1">SANDWICH</text>
+  <text x="120" y="256" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="2.2" opacity="0.85">HAM &amp; CHEESE</text>
+
+</g>
+</svg>

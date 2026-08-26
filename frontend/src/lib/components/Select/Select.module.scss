@@ -1,0 +1,65 @@
+.select {
+  padding: 7px;
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  label {
+    font-size: 13px;
+    margin-bottom: 7px;
+    display: inline-block;
+  }
+
+  input {
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  &__wrapper {
+    width: 100%;
+
+    &--content {
+      position: relative;
+
+      &-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+        background-color: var(--white);
+        border: 1px solid var(--border);
+
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none outside;
+
+          li {
+            padding: 6px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+
+            &:hover {
+              background-color: var(--border);
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

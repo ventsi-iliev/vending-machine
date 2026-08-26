@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="chewing gum">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M64 96 l56 -26 l56 26 l-56 26 z" fill="#3BA0A8"/>
+  <path d="M64 96 v182 l56 26 v-182 z" fill="#E8E4D8"/>
+  <path d="M176 96 v182 l-56 26 v-182 z" fill="#3BA0A8" fill-opacity="0.7"/>
+  <g transform="rotate(-25 120 196)"><text x="120" y="196" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="1.6" opacity="1">GUM</text></g>
+  <g transform="rotate(-25 120 218)"><text x="120" y="218" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="600" letter-spacing="2.2" opacity="0.85">SUGAR FREE</text></g>
+
+</g>
+</svg>

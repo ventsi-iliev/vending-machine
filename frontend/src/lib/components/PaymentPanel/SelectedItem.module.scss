@@ -1,0 +1,18 @@
+.selected-item {
+  h4 {
+    margin-bottom: 10px;
+  }
+
+  div {
+    padding: 6px;
+
+    div {
+      display: inline-block;
+      border: 1px solid var(--border);
+    }
+
+    img {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="lemon soda can">
+<g stroke="#1B1A22" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+
+  <path d="M62 80 v210 a58.0 16 0 0 0 116 0 v-210 z" fill="#F2C230"/>
+  <ellipse cx="120" cy="80" rx="58.0" ry="15" fill="#D9D6CE"/>
+  <ellipse cx="120" cy="80" rx="44.0" ry="9" fill="#F2C230" opacity="0.5"/>
+  <rect x="62" y="142" width="116" height="86" fill="#2F7A46"/>
+  <path d="M73 94 v180" stroke="#FFFFFF" stroke-width="8" opacity="0.26" fill="none"/>
+  <text x="120" y="194" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1.6" opacity="1">LEMON</text>
+  <text x="120" y="216" text-anchor="middle" fill="#FFFFFF" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.2" opacity="0.85">SPARKLING</text>
+  <text x="120" y="296" text-anchor="middle" fill="#1B1A22" stroke="none" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2" opacity="0.8">330 ml</text>
+
+</g>
+</svg>

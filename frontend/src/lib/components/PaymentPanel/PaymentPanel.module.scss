@@ -1,0 +1,23 @@
+.payment-panel {
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin: 8px 0 20px;
+
+    span {
+      color: var(--primary);
+      padding: 3px 8px;
+      font-weight: 700;
+      font-size: 22px;
+    }
+  }
+
+  button {
+    justify-self: flex-end;
+  }
+
+  img {
+    width: 100px;
+  }
+}
