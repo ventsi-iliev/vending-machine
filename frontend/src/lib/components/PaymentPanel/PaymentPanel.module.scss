@@ -13,6 +13,22 @@
     }
   }
 
+  &__coins {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+
+    button {
+      justify-self: auto;
+    }
+  }
+
+  &__inserted {
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
   button {
     justify-self: flex-end;
   }

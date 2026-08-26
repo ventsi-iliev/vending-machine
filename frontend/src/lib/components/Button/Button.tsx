@@ -5,6 +5,7 @@ type Props = {
   removeSpacing?: boolean;
   onClick?: () => void;
   disabled?: boolean;
+  type?: "button" | "submit";
 };
 
 export default function Button({
@@ -12,9 +13,11 @@ export default function Button({
   removeSpacing,
   onClick,
   disabled,
+  type = "button",
 }: Props) {
   return (
     <button
+      type={type}
       disabled={disabled}
       className={classes["button"]}
       onClick={onClick}

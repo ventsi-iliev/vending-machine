@@ -6,6 +6,12 @@
   font-size: 50px;
 }
 
+@media (max-width: 600px) {
+  .heading {
+    font-size: 34px;
+  }
+}
+
 .spinner {
   width: 32px;
   height: 32px;

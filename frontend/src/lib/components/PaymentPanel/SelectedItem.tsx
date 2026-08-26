@@ -1,24 +1,25 @@
+import { useAtomValue, useSetAtom } from "jotai";
 import classes from "./SelectedItem.module.scss";
-import type { Product, SupportedCurrencies } from "../../types/types";
 import Button from "../Button/Button";
 import Grid from "../Grid/Grid";
+import {
+  clearSelectionAtom,
+  selectedCurrencyAtom,
+  selectedItemAtom,
+} from "../../store";
 
-type Props = {
-  selectedItem: Product;
-  onClearSelection: () => void;
-  selectedCurrency: keyof typeof SupportedCurrencies;
-};
+export default function SelectedItem() {
+  const selectedItem = useAtomValue(selectedItemAtom);
+  const selectedCurrency = useAtomValue(selectedCurrencyAtom);
+  const clearSelection = useSetAtom(clearSelectionAtom);
 
-export default function SelectedItem({
-  selectedItem,
-  onClearSelection,
-  selectedCurrency,
-}: Props) {
+  if (!selectedItem) return null;
+
   return (
     <div className={classes["selected-item"]}>
       <Grid columns={2}>
         <h4>Selected product</h4>
-        <Button removeSpacing onClick={onClearSelection}>
+        <Button removeSpacing onClick={clearSelection}>
           Clear selection
         </Button>
       </Grid>

@@ -6,7 +6,7 @@
   display: grid;
   grid-gap: 10px;
 
-  @media (orientation: portrait) {
+  @media (max-width: 800px) {
     & {
       grid-template-columns: 1fr !important;
     }
@@ -20,7 +20,7 @@
     border-radius: 4px;
     padding: 8px;
     display: grid;
-    place-content: center;
+    justify-items: center;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
@@ -28,6 +28,11 @@
 
     &:hover {
       background-color: var(--border);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
     }
 
     &--disabled {

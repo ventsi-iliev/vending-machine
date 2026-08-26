@@ -1,49 +1,52 @@
-import { useMemo, useState } from "react";
-import { SupportedCurrencies, type Product } from "../../types/types";
+import { useAtomValue, useSetAtom } from "jotai";
+import { useMemo } from "react";
+import { SupportedCurrencies } from "../../types/types";
 import Button from "../Button/Button";
 import Grid from "../Grid/Grid";
-import Input from "../Input/Input";
 import Select from "../Select/Select";
 import classes from "./PaymentPanel.module.scss";
 import SelectedItem from "./SelectedItem";
-import { parseNumber } from "../../utils/parseNumber";
+import {
+  boughtItemAtom,
+  buyItemAtom,
+  changeAtom,
+  COIN_DENOMINATIONS,
+  insertCoinAtom,
+  insertedAmountAtom,
+  leftoverCreditAtom,
+  returnMoneyAtom,
+  returnedAmountAtom,
+  selectCurrencyAtom,
+  selectedCurrencyAtom,
+  selectedItemAtom,
+} from "../../store";
 
-type Props = {
-  selectedItem: Product | null;
-  onClearSelection: () => void;
-  onSelectCurrency: (currency: keyof typeof SupportedCurrencies) => void;
-  onBuyItem: (id: string, amount: number) => void;
-  onLowerCurrentAmount: (val: number) => void;
-  selectedCurrency: keyof typeof SupportedCurrencies;
-  currentAmount: number;
-  boughtItem: {
-    name: string;
-    image: string;
-  };
-  change: number;
-};
-
-export default function PaymentPanel({
-  selectedItem,
-  onClearSelection,
-  onBuyItem,
-  currentAmount,
-  selectedCurrency,
-  onSelectCurrency,
-  boughtItem,
-  change,
-  onLowerCurrentAmount,
-}: Props) {
-  const [amount, setAmount] = useState(0);
+export default function PaymentPanel() {
+  const selectedItem = useAtomValue(selectedItemAtom);
+  const selectedCurrency = useAtomValue(selectedCurrencyAtom);
+  const leftoverCredit = useAtomValue(leftoverCreditAtom);
+  const boughtItem = useAtomValue(boughtItemAtom);
+  const change = useAtomValue(changeAtom);
+  const insertedAmount = useAtomValue(insertedAmountAtom);
+  const returnedAmount = useAtomValue(returnedAmountAtom);
+  const selectCurrency = useSetAtom(selectCurrencyAtom);
+  const insertCoin = useSetAtom(insertCoinAtom);
+  const buyItem = useSetAtom(buyItemAtom);
+  const returnMoney = useSetAtom(returnMoneyAtom);
+  const acceptedCoins = COIN_DENOMINATIONS[selectedCurrency];
 
   let isAmountEnough = null;
 
   if (selectedItem) {
-    isAmountEnough = currentAmount >= 0 && amount >= selectedItem.price;
+    isAmountEnough =
+      leftoverCredit >= 0 && insertedAmount >= selectedItem.price;
   }
 
-  const disableActionButton =
-    !selectedItem || !amount || !selectedCurrency || !isAmountEnough;
+  const disableBuyButton =
+    !selectedItem ||
+    !insertedAmount ||
+    !selectedCurrency ||
+    !isAmountEnough;
 
   const options = useMemo(() => {
     return Object.values(SupportedCurrencies).map((e) => ({
@@ -54,73 +57,66 @@ export default function PaymentPanel({
 
   return (
     <section className={classes["payment-panel"]}>
-      {currentAmount + amount > 0 ? (
-        <>
-          <Grid columns={2}>
-            <div className={classes["payment-panel__heading"]}>
-              <div>
-                {" "}
-                <h3>Available money:</h3>
-                <span>
-                  {currentAmount} {selectedCurrency}
-                </span>
-              </div>
+      {leftoverCredit + insertedAmount > 0 ? (
+        <Grid columns={2}>
+          <div className={classes["payment-panel__heading"]}>
+            <div>
+              <h3>Wallet balance:</h3>
+              <span>
+                {leftoverCredit} {selectedCurrency}
+              </span>
             </div>
-            <Button
-              onClick={() => {
-                onLowerCurrentAmount(0);
-                setAmount(0);
-              }}
-              disabled={disableActionButton}
-            >
-              Return money
-            </Button>
-          </Grid>
-        </>
+          </div>
+          <Button onClick={returnMoney} disabled={insertedAmount <= 0}>
+            Reset and return coins
+          </Button>
+        </Grid>
       ) : (
-        <h4>You don't have enought credit</h4>
+        <h4>You don't have enough credit</h4>
       )}
 
       <Grid columns={2}>
-        <Input
-          id="deposit"
-          placeholder="Inserts money"
-          label="Inserts money"
-          type="number"
-          value={String(amount)}
-          onChange={(val: string) => {
-            const parsedNum = parseNumber(val);
+        <div>
+          <h3>Insert coins</h3>
+          <div className={classes["payment-panel__coins"]}>
+            {acceptedCoins.map((coin) => (
+              <Button
+                key={coin}
+                removeSpacing
+                disabled={coin > leftoverCredit}
+                onClick={() => insertCoin(coin)}
+              >
+                {coin} {selectedCurrency}
+              </Button>
+            ))}
+          </div>
+          <p className={classes["payment-panel__inserted"]}>
+            Inserted: {insertedAmount} {selectedCurrency}
+          </p>
+        </div>
 
-            setAmount(parsedNum);
-            onLowerCurrentAmount(parsedNum);
-          }}
-          helperText={
-            currentAmount < 0 && selectedItem
-              ? `You cannot buy the product because you don't have enought credit`
-              : ""
-          }
-        />
-
-        {/* Select currency */}
         <div>
           <Select
             id="currency"
-            placeholder="Adds currency"
-            label="Adds currency"
+            placeholder="Choose currency"
+            label="Currency"
             value={String(selectedCurrency)}
-            onChange={(val) => onSelectCurrency(val as typeof selectedCurrency)}
-            disabled={currentAmount + amount <= 0}
+            onChange={(val) =>
+              selectCurrency(val as typeof selectedCurrency)
+            }
+            disabled={insertedAmount > 0}
             options={options}
           />
+          {insertedAmount > 0 && (
+            <small>Return inserted coins before changing currency.</small>
+          )}
         </div>
       </Grid>
 
       <Button
-        disabled={disableActionButton}
+        disabled={disableBuyButton}
         onClick={() => {
-          onBuyItem(selectedItem?.id ?? "", amount);
-          setAmount(0);
-          onClearSelection();
+          buyItem(selectedItem?.id ?? "");
         }}
       >
         Buy
@@ -128,19 +124,19 @@ export default function PaymentPanel({
 
       {!isAmountEnough && isAmountEnough !== null && (
         <p>
-          <strong>You don't have enought money to buy this product</strong>
+          <strong>You don't have enough money to buy this product</strong>
+        </p>
+      )}
+
+      {returnedAmount > 0 && (
+        <p role="status">
+          Returned {returnedAmount} {selectedCurrency}
         </p>
       )}
 
       <hr />
 
-      {selectedItem && (
-        <SelectedItem
-          selectedItem={selectedItem}
-          onClearSelection={onClearSelection}
-          selectedCurrency={selectedCurrency}
-        />
-      )}
+      {selectedItem && <SelectedItem />}
 
       {boughtItem.name && boughtItem.image && (
         <Grid columns={2}>
