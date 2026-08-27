@@ -64,6 +64,6 @@ product price as change. Reset returns all inserted coins without purchasing.
   initial product list. Unsupported currencies receive HTTP 400.
 - The mocked catalog contains at most 15 units of each product.
 - Product create, read, update, delete, and vending stock changes happen only in
-  the frontend application state. Refreshing the page restores the mocked data.
+  the frontend application state. Refreshing requests fresh randomized mock data.
 - Currency cannot be changed while coins are inserted; reset first to return
   them.
