@@ -9,6 +9,7 @@ import {
   selectedCurrencyAtom,
   updateProductAtom,
 } from "../../store";
+import { parseNumber } from "../../utils/parseNumber";
 import Button from "../Button/Button";
 import classes from "./ProductManager.module.scss";
 
@@ -37,8 +38,19 @@ export default function ProductManager() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const price = Number(form.price);
-    const quantity = Number(form.quantity);
+    let price: number;
+    let quantity: number;
+
+    try {
+      price = parseNumber(form.price);
+      quantity = parseNumber(form.quantity);
+    } catch {
+      setError(
+        `Enter a name, a positive price, and a quantity from 0 to ${MAX_PRODUCT_QUANTITY}.`,
+      );
+      return;
+    }
+
     const editingProduct = products.find((product) => product.id === editingId);
     const draft = {
       name: form.name,

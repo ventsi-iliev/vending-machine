@@ -1,6 +1,7 @@
 import { atom } from "jotai";
 import Big from "big.js";
 import { currencyConverter } from "../utils/currencyConverter";
+import { parseNumber } from "../utils/parseNumber";
 import type { Product, SupportedCurrencies } from "../types/types";
 import {
   availableAmountAtom,
@@ -83,7 +84,7 @@ export const buyItemAtom = atom(null, (get, set, id: string) => {
   const selectedItem = get(selectedItemAtom);
   const availableAmount = get(availableAmountAtom);
   const amount = get(insertedAmountAtom);
-  const quantity = Number(selectedItem?.quantity ?? 0);
+  const quantity = parseNumber(selectedItem?.quantity ?? 0);
 
   if (!selectedItem || selectedItem.id !== id || quantity <= 0) return;
   if (selectedItem.price > amount || amount > availableAmount) return;
@@ -105,7 +106,7 @@ export const buyItemAtom = atom(null, (get, set, id: string) => {
 });
 
 export const addProductAtom = atom(null, (get, set, draft: ProductDraft) => {
-  const quantity = Number(draft.quantity);
+  const quantity = parseNumber(draft.quantity);
 
   if (
     !draft.name.trim() ||
@@ -132,7 +133,7 @@ export const addProductAtom = atom(null, (get, set, draft: ProductDraft) => {
 export const updateProductAtom = atom(
   null,
   (get, set, product: Product) => {
-    const quantity = Number(product.quantity);
+    const quantity = parseNumber(product.quantity);
 
     if (
       !product.name.trim() ||

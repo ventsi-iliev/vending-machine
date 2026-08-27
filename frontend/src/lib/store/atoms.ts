@@ -1,4 +1,5 @@
 import { atom } from "jotai";
+import Big from "big.js";
 import type { Product, SupportedCurrencies } from "../types/types";
 
 export const AVAILABLE_AMOUNT = 500;
@@ -28,5 +29,8 @@ export const ajaxStatusAtom = atom<AjaxStatus>("initial");
 export const apiMessageAtom = atom("");
 
 export const leftoverCreditAtom = atom((get) =>
-  Number((get(availableAmountAtom) - get(insertedAmountAtom)).toFixed(2)),
+  new Big(get(availableAmountAtom))
+    .minus(get(insertedAmountAtom))
+    .round(2)
+    .toNumber(),
 );

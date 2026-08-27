@@ -12,9 +12,11 @@ export function currencyConverter(
   from: keyof typeof SupportedCurrencies,
   to: keyof typeof SupportedCurrencies,
 ) {
-  return Number(
-    new Big(amount).div(RATES[from]).times(RATES[to]).toFixed(2),
-  );
+  return new Big(amount)
+    .div(RATES[from])
+    .times(RATES[to])
+    .round(2)
+    .toNumber();
 }
 
 // amount is already in `currency`, price is EUR

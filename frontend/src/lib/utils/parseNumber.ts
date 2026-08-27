@@ -1,9 +1,9 @@
+import Big from "big.js";
+
 export function parseNumber(val: string | number) {
-  const toNum = Number(val);
-
-  if (!Number.isNaN(toNum)) {
-    return toNum;
+  try {
+    return new Big(val).toNumber();
+  } catch {
+    throw new Error("Invalid coercion.");
   }
-
-  throw new Error("Invalid coercion.");
 }
