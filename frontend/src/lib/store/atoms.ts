@@ -2,7 +2,7 @@ import { atom } from "jotai";
 import type { Product, SupportedCurrencies } from "../types/types";
 
 export const AVAILABLE_AMOUNT = 500;
-export const BACKEND = "http://localhost:3000";
+export const BACKEND = "/api";
 export const MAX_PRODUCT_QUANTITY = 15;
 export const COIN_DENOMINATIONS = {
   EUR: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2],

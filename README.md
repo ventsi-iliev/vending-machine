@@ -5,10 +5,25 @@ and an in-memory mocked products API.
 
 ## Requirements
 
+- Docker with Docker Compose (recommended)
+
+For running without Docker:
+
 - Node.js 22.13 or newer
 - npm
 
-## Install and run
+## Run with Docker
+
+Build and start the frontend and backend together:
+
+```sh
+docker compose up --build
+```
+
+Open http://localhost:5173. Stop both services with `Ctrl+C`, or run
+`docker compose down` if they were started in the background.
+
+## Run without Docker
 
 Install and start the mocked API:
 

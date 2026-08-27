@@ -1,4 +1,5 @@
 import { atom } from "jotai";
+import Big from "big.js";
 import { currencyConverter } from "../utils/currencyConverter";
 import type { Product, SupportedCurrencies } from "../types/types";
 import {
@@ -14,7 +15,7 @@ import {
   selectedItemAtom,
 } from "./atoms";
 
-const toMoney = (amount: number) => Number(amount.toFixed(2));
+const toMoney = (amount: number) => new Big(amount).round(2).toNumber();
 
 export type ProductDraft = Pick<Product, "name" | "price" | "quantity" | "image">;
 
