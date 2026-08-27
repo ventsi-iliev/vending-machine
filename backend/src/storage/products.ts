@@ -29,7 +29,7 @@ const generateUniquePrices = (count: number) => {
 export const generateProducts = (): Product[] => {
   const prices = generateUniquePrices(PRODUCT_IMAGES.length);
 
-  return faker.helpers.shuffle([...PRODUCT_IMAGES]).map((image, index) => ({
+  return PRODUCT_IMAGES.map((image, index) => ({
     id: faker.string.uuid(),
     name: faker.commerce.productName(),
     quantity: faker.number.int({ min: 0, max: 15 }),
